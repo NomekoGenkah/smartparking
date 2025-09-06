@@ -8,9 +8,7 @@ import FelipePage from "./screens/FelipePage.jsx";
 import MartinPage from "./screens/MartinPage.jsx";
 import MaximilianoPage from "./screens/MaximilianoPage.jsx";
 import PedroPage from "./screens/PedroPage.jsx";
-//import Screen1 from "./screens/Screen1.jsx";
-//import Screen2 from "./screens/Screen2.jsx";
-//import Screen3 from "./screens/Screen3.jsx";
+
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
