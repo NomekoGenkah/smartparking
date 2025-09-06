@@ -36,7 +36,7 @@ alert("ESTE ES EL PROGRAMA NUMERO 1 DE LA TELEVISION HUMORISTICA! EL CHAVOOOO. I
 
 //funcion descargar boleta
 const descargarBoleta = () => {
-  window.location.href = "https://www.minecraft.net/es-es/download"; 
+  window.location.href = "https://aka.ms/minecraftClientGameCoreWindows"; 
 };
 
   return (
