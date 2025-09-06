@@ -4,7 +4,9 @@ import './App.css';
 
 function App() {
   return (
+
     <div>
+
       <h1>Pagina principla</h1>
 
           <Link to="/EstebanPage">Esteban</Link>
@@ -19,6 +21,8 @@ function App() {
 
 
     </div>
+
+
   );
 }
 
