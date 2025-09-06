@@ -9,13 +9,13 @@ function App() {
 
       <h1>Pagina principla</h1>
 
-          <Link to="/EstebanPage">Esteban</Link>
+          <Link to="/EstebanPage">Esteban  </Link>
 
-          <Link to="/FelipePage">Felipe</Link>
+          <Link to="/FelipePage">Felipe  </Link>
 
-          <Link to="/MartinPage">Martin</Link>
+          <Link to="/MartinPage">Martin  </Link>
 
-          <Link to="/MaximilianoPage">Maximilaiano</Link>
+          <Link to="/MaximilianoPage">Maximilaiano  </Link>
 
           <Link to="/PedroPage">Pedro</Link>
 
