@@ -1,16 +1,11 @@
 //import "./Home.css";
+import Header from "../components/header";
 import "../styles/Global.css"
 
 export default function Home() {
   return (
     <div className="screen-container">
-      <header className="screen-header">
-        <img 
-          src="/logo.png" 
-          alt="SmartParking Logo" 
-          className="logo"
-        />
-      </header>
+      <Header></Header>
 
       <main className="home-main">
         <h1>Menú</h1>
