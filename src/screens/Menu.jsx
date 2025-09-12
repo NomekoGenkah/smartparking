@@ -1,8 +1,11 @@
 //import "./Home.css";
 import Header from "../components/header";
 import "../styles/Global.css"
+import { useNavigate } from "react-router-dom";
 
 export default function Menu() {
+  const navigate = useNavigate();
+
   return (
     <div className="screen-container">
       <Header></Header>
@@ -12,11 +15,11 @@ export default function Menu() {
         <p className="subtitle">Selecciona la opción:</p>
 
         <div className="menu-buttons">
-          <button className="menu-btn">Registro Ingreso/Salida</button>
-          <button className="menu-btn">Reportes</button>
-          <button className="menu-btn">Panel de Control</button>
-          <button className="menu-btn">Contacto Soporte</button>
-          <button className="menu-btn">Ajustes</button>
+          <button onClick={() => navigate("/Registro")} className="menu-btn">Registro Ingreso/Salida</button>
+          <button onClick={() => navigate("/Ingreso")}  className="menu-btn">Ingreso</button>
+          <button onClick={() => navigate("/Reportes")} className="menu-btn">Panel de Control</button>
+          <button onClick={() => navigate("/Ganancias")} className="menu-btn">Ganancias</button>
+          <button onClick={() => navigate("/Login")} className="menu-btn">Login</button>
         </div>
       </main>
     </div>
