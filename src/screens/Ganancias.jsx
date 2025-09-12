@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { jsPDF } from 'jspdf';
 import { Filesystem, Directory } from '@capacitor/filesystem';
 import { Share } from '@capacitor/share';
+import Header from "../components/header";
+import "../styles/Global.css"
 
 export default function Ganancias() {
  const [history, setHistory] = useState(() => {
@@ -85,6 +87,7 @@ export default function Ganancias() {
 
   return (
     <div className="container">
+      <Header></Header>
       <h2 className="title">Reporte Diario de Ganancias</h2>
       <label htmlFor="datePicker">Selecciona la fecha: </label>
       <input

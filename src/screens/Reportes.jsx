@@ -1,4 +1,5 @@
 import Header from "../components/header";
+import "../styles/Global.css"
 
 export default function Reportes() {
     return (

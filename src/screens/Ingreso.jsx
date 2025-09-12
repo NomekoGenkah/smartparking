@@ -2,6 +2,9 @@ import React, { useState } from "react"; // UseState para cambios D;
 
 import { useEffect } from 'react'; //para el reloj
 
+import Header from "../components/header";
+import "../styles/Global.css"
+
 export default function Ingreso() {
   
 //VARIABLES
@@ -100,6 +103,7 @@ const descargarBoleta = () => {
 
   return (
     <div style={styles.pagina}>
+      <Header></Header>
       {/* Titulos */}
       <h1>Ingreso/Salida de Patente</h1>
       <h2>Fecha: {formattedDate} {formattedTime}</h2>
