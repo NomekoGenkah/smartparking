@@ -3,7 +3,7 @@ import { jsPDF } from 'jspdf';
 import { Filesystem, Directory } from '@capacitor/filesystem';
 import { Share } from '@capacitor/share';
 
-export default function MartinPage() {
+export default function Ganancias() {
  const [history, setHistory] = useState(() => {
     const savedHistory = localStorage.getItem('history');
     return savedHistory ? JSON.parse(savedHistory) : [];

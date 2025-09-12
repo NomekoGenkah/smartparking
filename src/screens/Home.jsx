@@ -1,4 +1,4 @@
-export default function PedroPage() {
+export default function Home() {
     return (
       <div style={{ padding: "2rem" }}>
         <h1>Pedro</h1>

@@ -1,5 +1,5 @@
 
-export default function MaximilianoPage() {
+export default function Login() {
     return (
       <div style={{ padding: "2rem" }}>
         <h1>Maximiliano</h1>

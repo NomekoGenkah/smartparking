@@ -2,7 +2,7 @@ import React, { useState } from "react"; // UseState para cambios D;
 
 import { useEffect } from 'react'; //para el reloj
 
-export default function EstebanPage() {
+export default function Ingreso() {
   
 //VARIABLES
 const cuposTotales = 50;

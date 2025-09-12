@@ -9,15 +9,15 @@ function App() {
 
       <h1>Pagina principla</h1>
 
-          <Link to="/EstebanPage">Esteban  </Link>
+          <Link to="/Ingreso">Esteban  </Link>
 
-          <Link to="/FelipePage">Felipe  </Link>
+          <Link to="/Reportes">Felipe  </Link>
 
-          <Link to="/MartinPage">Martin  </Link>
+          <Link to="/Ganancias">Martin  </Link>
 
-          <Link to="/MaximilianoPage">Maximilaiano  </Link>
+          <Link to="/Login">Maximilaiano  </Link>
 
-          <Link to="/PedroPage">Pedro</Link>
+          <Link to="/Home">Pedro</Link>
 
 
     </div>
