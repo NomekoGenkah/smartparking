@@ -3,12 +3,12 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import App from "./App.jsx";
 
-import Home from "./screens/Home.jsx";
 import Login from "./screens/Login.jsx";
 import Ganancias from "./screens/Ganancias.jsx";
 import Reportes from "./screens/Reportes.jsx";
 import Ingreso from "./screens/Ingreso.jsx";
 import Registro from "./screens/Registro.jsx";
+import Menu from "./screens/Home.jsx";
 
 
 ReactDOM.createRoot(document.getElementById("root")).render(
@@ -23,7 +23,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Route path="/Reportes" element={<Reportes />} />
         <Route path="/Ganancias" element={<Ganancias />} />
         <Route path="/Login" element={<Login />} />
-        <Route path="/Home" element={<Home />} />
+        <Route path="/Menu" element={<Menu />} />
         <Route path="/Registro" element={<Registro />} />
 
       </Routes>

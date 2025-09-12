@@ -17,7 +17,7 @@ function App() {
 
           <Link to="/Login">Maximilaiano  </Link>
 
-          <Link to="/Home">Pedro</Link>
+          <Link to="/Menu">Menu</Link>
 
           <Link to="Registro">Registro</Link>
 

@@ -2,7 +2,7 @@
 import Header from "../components/header";
 import "../styles/Global.css"
 
-export default function Home() {
+export default function Menu() {
   return (
     <div className="screen-container">
       <Header></Header>
