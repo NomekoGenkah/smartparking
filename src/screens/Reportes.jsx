@@ -1,8 +1,20 @@
+import Header from "../components/header";
+
 export default function Reportes() {
     return (
-      <div style={{ padding: "2rem" }}>
-        <h1>Felipe</h1>
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRKJFQz6fI-vk0rTBQyafzjR1bvDPPzsRHjhsDyWYszIIutDZiuBYf2N9BnLfL4Ae4Itw&usqp=CAU" alt="foto" />
-      </div>
+    <div className="screen-container">
+      <Header></Header>
+
+      <main className="reportes-main">
+        <h1>REPORTES</h1>
+        <p className="subtitle">Selecciona la opción:</p>
+
+        <div className="menu-buttons">
+          <button className="menu-btn">SELECCIONE FECHA</button>
+          <button className="menu-btn">DESCARGAR PDF</button>
+          <button className="menu-btn">TOTAL DE HOY</button>
+        </div>
+      </main>
+    </div>
     );
   }
