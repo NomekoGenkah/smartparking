@@ -19,6 +19,8 @@ function App() {
 
           <Link to="/Home">Pedro</Link>
 
+          <Link to="Registro">Registro</Link>
+
 
     </div>
 

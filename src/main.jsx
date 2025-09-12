@@ -8,6 +8,7 @@ import Login from "./screens/Login.jsx";
 import Ganancias from "./screens/Ganancias.jsx";
 import Reportes from "./screens/Reportes.jsx";
 import Ingreso from "./screens/Ingreso.jsx";
+import Registro from "./screens/Registro.jsx";
 
 
 ReactDOM.createRoot(document.getElementById("root")).render(
@@ -23,6 +24,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Route path="/Ganancias" element={<Ganancias />} />
         <Route path="/Login" element={<Login />} />
         <Route path="/Home" element={<Home />} />
+        <Route path="/Registro" element={<Registro />} />
 
       </Routes>
     </BrowserRouter>
