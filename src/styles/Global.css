@@ -30,7 +30,8 @@ body {
 
 .screen-logo {
   width: 120px;
-  height: auto;
+  height: 120px;
+  border-radius: 25px;
 }
 
 /* 🔹 Contenido principal */
@@ -50,14 +51,6 @@ body {
   color: #666;
   font-size: 0.9rem;
   margin-bottom: 2rem;
-}
-
-.screen-header {
-  background-color: #1e1e1e;
-  padding: 2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 /* 🔹 Botones reutilizables */

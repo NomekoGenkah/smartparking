@@ -1,12 +1,13 @@
-export default function Header(){
+import React from "react";
+import logo from "../assets/logo.png";
 
-    return(
-      <header className="screen-header">
-        <img 
-          src="/logo.png" 
-          alt="SmartParking Logo" 
-          className="logo"
-        />
-      </header>
-    );
+export default function Header() {
+  return (
+    <header className="screen-header">
+      <img className="screen-logo"
+        src={logo} 
+        alt="SmartParking Logo" 
+      />
+    </header>
+  );
 }
