@@ -16,6 +16,7 @@ body {
   display: flex;
   flex-direction: column;
   height: 100vh;
+  gap: 2rem;
 }
 
 /* 🔹 Header negro con logo centrado */

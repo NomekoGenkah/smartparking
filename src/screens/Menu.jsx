@@ -17,7 +17,7 @@ export default function Menu() {
         <div className="menu-buttons">
           <button onClick={() => navigate("/Registro")} className="menu-btn">Registro Ingreso/Salida</button>
           <button onClick={() => navigate("/Ingreso")}  className="menu-btn">Ingreso</button>
-          <button onClick={() => navigate("/Reportes")} className="menu-btn">Panel de Control</button>
+          <button onClick={() => navigate("/Reportes")} className="menu-btn">Reportes</button>
           <button onClick={() => navigate("/Ganancias")} className="menu-btn">Ganancias</button>
           <button onClick={() => navigate("/Login")} className="menu-btn">Login</button>
         </div>
