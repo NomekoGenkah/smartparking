@@ -22,6 +22,8 @@ function App() {
 
           <Link to="/Ajustes"> Ajustes </Link>
 
+          <Link to="/Salida"> Salida de Vehiculos </Link>
+
     </div>
 
 
