@@ -9,6 +9,7 @@ import Reportes from "./screens/Reportes.jsx";
 import Ingreso from "./screens/Ingreso.jsx";
 import Registro from "./screens/Registro.jsx";
 import Menu from "./screens/Menu.jsx";
+import Ajustes from "./screens/Ajustes.jsx";
 
 import { ConfigProvider } from "./context/ConfigContext.jsx";
 
@@ -28,6 +29,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path="/Login" element={<Login />} />
           <Route path="/Menu" element={<Menu />} />
           <Route path="/Registro" element={<Registro />} />
+          <Route path="/Ajustes" element={<Ajustes />} />
+
 
         </Routes>
       </BrowserRouter>

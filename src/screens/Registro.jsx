@@ -3,8 +3,10 @@ import "../styles/Global.css"
 
 import { useState } from "react";
 import { registrarEntrada } from "../services/parkingService";
+import { useConfig } from "../context/ConfigContext";
 
 export default function Registro(){
+    const { disponibles, capacidad, recalcEspaciosUsados } = useConfig();
 
 
     const [form, setForm] = useState({
@@ -27,22 +29,24 @@ export default function Registro(){
     e.preventDefault();
 
     try {
-      await registrarEntrada(form);
-      alert("Entrada registrada con éxito ✅");
+        await registrarEntrada(form);
+        alert("Entrada registrada con éxito ✅");
 
-      // limpiar formulario
-      setForm({
-        rut: "",
-        nombre: "",
-        fono: "",
-        placa: "",
-        tipo: "",
-      });
-    } catch (error) {
-      console.error(error);
-      alert("Error al registrar entrada ❌");
-    }
-  };
+        // limpiar formulario
+        setForm({
+            rut: "",
+            nombre: "",
+            fono: "",
+            placa: "",
+            tipo: "",
+        });
+
+        recalcEspaciosUsados();
+        } catch (error) {
+        console.error(error);
+        alert("Error al registrar entrada ❌");
+        }
+    };
 
 
     return(
@@ -116,20 +120,11 @@ export default function Registro(){
                     </div>
                 </section>
 
+                <h3>Espacios disponibles: {disponibles} / {capacidad}</h3>
+
                 {/* Botón */}
                 <button type="submit" className="menu-btn">Registrar Entrada</button>
             </form>
-
-
-
-            <h1>REGISTRO</h1>
-            <h3>Espacios disponibles 46/50</h3>
-
-            <div className="menu-buttons">
-                <button className="menu-btn">Ingreso</button>
-                <button className="menu-btn">Salida</button>
-                <button className="menu-btn">Lista de vehiculos</button>
-            </div>
         </div>
     );
 }
