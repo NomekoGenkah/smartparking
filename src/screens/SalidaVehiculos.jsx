@@ -47,7 +47,7 @@ export default function SalidaVehiculos() {
     }
   };
 
-  return (
+return (
     <div className="screen-main">
       <Header />
       <h1>Vehículos Activos</h1>
@@ -55,23 +55,33 @@ export default function SalidaVehiculos() {
       {activos.length === 0 ? (
         <p>No hay vehículos dentro del estacionamiento.</p>
       ) : (
-        <section className="form-card">
-          {activos.map((r) => (
-            <div key={r.id} className="form-group" style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+        activos.map((r) => (
+          <section key={r.id} className="form-card">
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+              }}
+            >
               <div>
-                <strong>{r.vehiculo?.placa}</strong> - {r.vehiculo?.tipo || "Desconocido"} <br/>
-                {r.persona?.nombre} ({r.persona?.rut})
+                <strong>Placa:</strong> {r.vehiculo?.placa} <br />
+                <strong>Tipo:</strong> {r.vehiculo?.tipo || "Desconocido"} <br />
+                <strong>Persona:</strong> {r.persona?.nombre || "N/A"} ({r.persona?.rut}) <br />
+                <strong>Entrada:</strong>{" "}
+                {r.entrada ? new Date(r.entrada).toLocaleString() : "Desconocida"}
               </div>
               <button
                 className="menu-btn"
                 type="button"
                 onClick={() => handleSalida(r.vehiculo.placa)}
+                style={{ width: "120px" }}
               >
                 Marcar Salida
               </button>
             </div>
-          ))}
-        </section>
+          </section>
+        ))
       )}
     </div>
   );
