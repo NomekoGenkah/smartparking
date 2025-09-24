@@ -1,5 +1,36 @@
 import { db } from "./db";
 
+
+export async function verificarEntrada({ rut, nombre = null, fono = null, placa, tipo = null }) {
+    console.log("verificarEntrada recibida:", { rut, nombre, fono, placa, tipo });
+
+    //AQUI AHORA SE PUEDEN PONER MAS COMPROBACIONES
+
+
+    //RUT (lo del digito verificador)
+
+
+
+    //PLACA
+    //Formateo correcto elimiacion de webadas
+    let placaFormatted = placa.toUpperCase();
+    placaFormatted = placaFormatted.replace(/[\s-]/g, ''); 
+    console.log("Placa formateada:", placaFormatted);
+
+    //caracteres
+    const caracteresValidos = /[^ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789]/;
+    const NoesValido = caracteresValidos.test(placaFormatted); // true si hay caracteres no permitidos
+    console.log("Es válida la placa:", !NoesValido);
+
+    if (placaFormatted !== "" && (placaFormatted.length === 6 || placaFormatted.length === 5) && !NoesValido) {
+        return true;  
+    } else {
+        return false;  
+    }
+}
+
+
+
 export async function registrarEntrada({rut, nombre = null, fono = null, placa, tipo = null}) {
 
     await db.persona.put({rut, nombre, fono});

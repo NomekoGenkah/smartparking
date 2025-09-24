@@ -3,6 +3,7 @@ import "../styles/Global.css"
 
 import { useState } from "react";
 import { registrarEntrada } from "../services/parkingService";
+import { verificarEntrada } from "../services/parkingService";
 import { useConfig } from "../context/ConfigContext";
 
 export default function Registro(){
@@ -25,28 +26,34 @@ export default function Registro(){
     };
     
 
-  const handleSubmit = async (e) => {
+const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-        await registrarEntrada(form);
-        alert("Entrada registrada con éxito ✅");
+        //await de shit que
+        const esValido = await verificarEntrada(form);
 
-        // limpiar formulario
-        setForm({
-            rut: "",
-            nombre: "",
-            fono: "",
-            placa: "",
-            tipo: "",
-        });
+        if (esValido == 1) {
+            await registrarEntrada(form);
+            alert("Entrada registrada con exito.");
 
-        recalcEspaciosUsados();
-        } catch (error) {
-        console.error(error);
-        alert("Error al registrar entrada ❌");
+            //fucking await 0 comentarios tiene esta wea de como funciona
+            setForm({
+                rut: "",
+                nombre: "",
+                fono: "",
+                placa: "",
+                tipo: "",
+            });
+            recalcEspaciosUsados();
+        } else {
+            alert("Error al registrar entrada.");
         }
-    };
+    } catch (error) {
+        console.error("Error en handleSubmit:", error);
+        alert("Hubo un error inesperado. Intenta nuevamente.");
+    }
+};
 
 
     return(
