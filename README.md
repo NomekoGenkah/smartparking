@@ -24,3 +24,6 @@ y botones que aun no hacen nada
 commit segunda version ingreso patente. ez
 -puesta la hora actual que se modifica dinamicamente y puesto formateo basico
 de la fecha eliminando caracteres no deseados y haciendo verificaciones si son validos.
+
+
+-commit que detecta la cosa de la placa me quiero matar
