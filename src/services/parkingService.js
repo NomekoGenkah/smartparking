@@ -8,19 +8,24 @@ export async function verificarEntrada({ rut, nombre = null, fono = null, placa,
 
 
     //RUT (lo del digito verificador)
-
+    rut = rut.replace(/[\s-]/g, ''); //eliminacion de guinoes y espacios
+    let rutWithoutLastDigit = rut.slice(0, -1); //eliminacion de digito verificador
+    let rutInt = parseInt(rutWithoutLastDigit); //
+    //aca lo del digito verificador que no recuerdo como se hace
+    //hay que hacer que calcule el digito verificador, luego combine el rutInt con el digito verificador en un string, y que compare ese string con el originalformateado
+    alert(rutInt);
 
 
     //PLACA
     //Formateo correcto elimiacion de webadas
     let placaFormatted = placa.toUpperCase();
     placaFormatted = placaFormatted.replace(/[\s-]/g, ''); 
-    console.log("Placa formateada:", placaFormatted);
+
 
     //caracteres
     const caracteresValidos = /[^ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789]/;
     const NoesValido = caracteresValidos.test(placaFormatted); // true si hay caracteres no permitidos
-    console.log("Es válida la placa:", !NoesValido);
+
 
     if (placaFormatted !== "" && (placaFormatted.length === 6 || placaFormatted.length === 5) && !NoesValido) {
         return true;  
@@ -32,6 +37,9 @@ export async function verificarEntrada({ rut, nombre = null, fono = null, placa,
 
 
 export async function registrarEntrada({rut, nombre = null, fono = null, placa, tipo = null}) {
+
+    placa = placa.toUpperCase();
+    placa = placa.replace(/[\s-]/g, ''); 
 
     await db.persona.put({rut, nombre, fono});
 

@@ -34,6 +34,8 @@ const handleSubmit = async (e) => {
         const esValido = await verificarEntrada(form);
 
         if (esValido == 1) {
+
+            
             await registrarEntrada(form);
             alert("Entrada registrada con exito.");
 
