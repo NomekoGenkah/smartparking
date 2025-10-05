@@ -1,33 +1,32 @@
-import React from "react";
-import { Link } from "react-router-dom"; // Importa Link para la navegación
+import { useEffect } from "react";
+import { App as CapacitorApp } from "@capacitor/app";
+import { useNavigate, useLocation } from "react-router-dom";
 import './App.css';
 
 function App() {
-  return (
+  const navigate = useNavigate();
+  const location = useLocation();
 
-    <div>
-      <h1>Pagina principla</h1>
+  useEffect(() => {
+    const backHandler = CapacitorApp.addListener("backButton", () => {
+      const current = location.pathname.toLowerCase();
 
-          <Link to="/Ingreso"> Esteban </Link>
+      if(
+        ["/ingreso", "/salida", "/reportes", "ajustes"].includes(current)
+      ) {
+        navigate("/menu");
+      }
 
-          <Link to="/Reportes"> Felipe </Link>
+      else if (current === "/" || current === "/menu"){
+        CapacitorApp.exitApp();
+      }
+    });
 
-          <Link to="/Ganancias"> Martin </Link>
-
-          <Link to="/Login"> Maximiliano </Link>
-
-          <Link to="/Menu"> Menu </Link>
-
-          <Link to="/Registro"> Registro </Link>
-
-          <Link to="/Ajustes"> Ajustes </Link>
-
-          <Link to="/Salida"> Salida de Vehiculos </Link>
-
-    </div>
+    return () => backHandler.remove();
+  }, [location, navigate]);
 
 
-  );
+  return null;
 }
 
 export default App;

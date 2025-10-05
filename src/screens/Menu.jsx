@@ -7,7 +7,7 @@ export default function Menu() {
   const navigate = useNavigate();
 
   return (
-    <div className="screen-container">
+    <div className="screen-main">
       <Header></Header>
 
       <main className="home-main">
@@ -15,11 +15,10 @@ export default function Menu() {
         <p className="subtitle">Selecciona la opción:</p>
 
         <div className="menu-buttons">
-          <button onClick={() => navigate("/Registro")} className="menu-btn">Registro Ingreso/Salida</button>
-          <button onClick={() => navigate("/Ingreso")}  className="menu-btn">Ingreso</button>
-          <button onClick={() => navigate("/Reportes")} className="menu-btn">Reportes</button>
-          <button onClick={() => navigate("/Ganancias")} className="menu-btn">Ganancias</button>
-          <button onClick={() => navigate("/Login")} className="menu-btn">Login</button>
+          <button onClick={() => navigate("/registro")} className="menu-btn">Registrar Ingreso</button>
+          <button onClick={() => navigate("/salida")} className="menu-btn">Registrar Salida</button>
+          <button onClick={() => navigate("/reportes")} className="menu-btn">Reportes</button>
+          <button onClick={() => navigate("/ajustes")} className="menu-btn">Ajustes</button>
         </div>
       </main>
     </div>

@@ -59,7 +59,7 @@ const handleSubmit = async (e) => {
 
 
     return(
-        <div>
+        <div className="screen-main">
             <Header />
 
             <form onSubmit={handleSubmit}>
