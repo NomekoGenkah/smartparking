@@ -4,35 +4,55 @@ import { db } from "./db";
 export async function verificarEntrada({ rut, nombre = null, fono = null, placa, tipo = null }) {
     console.log("verificarEntrada recibida:", { rut, nombre, fono, placa, tipo });
 
-    //AQUI AHORA SE PUEDEN PONER MAS COMPROBACIONES
+    // 🔹 Validar RUT
+    if (!rut) return false;
 
+    // 1. Normalizar: quitar puntos, guiones y espacios
+    rut = rut.replace(/[\.\-\s]/g, '').toUpperCase();
 
-    //RUT (lo del digito verificador)
-    rut = rut.replace(/[\s-]/g, ''); //eliminacion de guinoes y espacios
-    let rutWithoutLastDigit = rut.slice(0, -1); //eliminacion de digito verificador
-    let rutInt = parseInt(rutWithoutLastDigit); //
-    //aca lo del digito verificador que no recuerdo como se hace
-    //hay que hacer que calcule el digito verificador, luego combine el rutInt con el digito verificador en un string, y que compare ese string con el originalformateado
-    alert(rutInt);
+    // 2. Separar cuerpo y dígito verificador
+    const cuerpo = rut.slice(0, -1);
+    const dvIngresado = rut.slice(-1);
 
+    if (!/^\d+$/.test(cuerpo)) {
+        console.warn("RUT inválido: contiene caracteres no numéricos");
+        return false;
+    }
 
-    //PLACA
-    //Formateo correcto elimiacion de webadas
-    let placaFormatted = placa.toUpperCase();
-    placaFormatted = placaFormatted.replace(/[\s-]/g, ''); 
+    // 3. Calcular dígito verificador
+    let suma = 0;
+    let multiplicador = 2;
 
+    for (let i = cuerpo.length - 1; i >= 0; i--) {
+        suma += parseInt(cuerpo[i]) * multiplicador;
+        multiplicador = multiplicador < 7 ? multiplicador + 1 : 2;
+    }
 
-    //caracteres
-    const caracteresValidos = /[^ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789]/;
-    const NoesValido = caracteresValidos.test(placaFormatted); // true si hay caracteres no permitidos
+    const resto = suma % 11;
+    const dvCalculado = resto === 0 ? '0' : resto === 1 ? 'K' : String(11 - resto);
 
+    // 4. Comparar dígitos verificadores
+    if (dvCalculado !== dvIngresado) {
+        console.warn(`RUT inválido: DV esperado ${dvCalculado}, recibido ${dvIngresado}`);
+        return false;
+    }
 
-    if (placaFormatted !== "" && (placaFormatted.length === 6 || placaFormatted.length === 5) && !NoesValido) {
-        return true;  
+    // 🔹 Validar PLACA
+    let placaFormatted = placa.toUpperCase().replace(/[\s-]/g, '');
+    const caracteresValidos = /^[A-Z0-9]+$/;
+
+    if (
+        placaFormatted !== "" &&
+        (placaFormatted.length === 6 || placaFormatted.length === 5) &&
+        caracteresValidos.test(placaFormatted)
+    ) {
+        return true;
     } else {
-        return false;  
+        console.warn("Placa inválida");
+        return false;
     }
 }
+
 
 
 
